@@ -1,0 +1,21 @@
+body{
+    background-color: #000;
+}
+.lcd {
+    float: left;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #FFF;
+    padding-bottom: 2px;
+    padding-left: 1px;
+}
+.lcd:after {
+    content: "";
+    clear: both;
+}
+.char {
+    float: left;
+    width: 50px;
+    word-wrap: break-word;
+    line-height: 0.6em;
+    margin-bottom: 2px;
+}
