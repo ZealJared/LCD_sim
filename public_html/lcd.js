@@ -36,6 +36,14 @@ lcd.begin = function (cols, rows) {
         }
         lcd.activeChar = lcd.chars[activeNumber];
     };
+    lcd.clear = function(){
+        lcd.home();
+        var clearString = "";
+        for(var i = 0; i < lcd.chars.length; i++){
+            clearString += " ";
+        }
+        lcd.print(clearString);
+    };
     lcd.home = function(){
         lcd.setCursor(0, 0);
     };
@@ -52,7 +60,28 @@ lcd.font = {
     "&": "64a88ac9a0",
     "'": "2100000000",
     "(": "1110841040",
-    ")": "4104211100"
+    ")": "4104211100",
+    "*": "12aea9000",
+    "+": "109f21000",
+    ",": "3088",
+    "-": "1f00000",
+    ".": "3180",
+    "/": "44444000",
+    "0": "74675cc5c0",
+    "1": "23084211c0",
+    "2": "74422223e0",
+    "3": "f88820c5c0",
+    "4": "11952f8840",
+    "5": "fc3c10c5c0",
+    "6": "3221e8c5c0",
+    "7": "fc44442100",
+    "8": "7462e8c5c0",
+    "9": "7462f08980",
+    ":": "18c03180",
+    ";": "18c03088",
+    "<": "888820820",
+    "=": "3e0f8000",
+    ">": "8208222200"
 };
 
 lcd.char = function(){
