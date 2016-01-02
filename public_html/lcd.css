@@ -30,3 +30,10 @@ body{
     padding-top: 1px;
     padding-bottom: 1px;
 }
+.contain {
+    float: left;
+    clear: left;
+}
+.hex {
+    float: left;
+}

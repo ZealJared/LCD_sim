@@ -1,16 +1,18 @@
-var char = {};
-char.init = function(){
-    char.hex = $("<div>0</div>");
-    char.el = $("<div class='char'></div>");
-    $("body").append(char.el);
-    $("body").append(char.hex);
+char = function(){
+    this.contain = $("<div class='contain'></div>");
+    this.hex = $("<div class='hex'>0</div>");
+    this.el = $("<div class='char'></div>");
+    this.contain.append(this.el);
+    this.contain.append(this.hex);
+    $("body").append(this.contain);
     // string of 40 0's that become 1's on click, showing hex value
     for(var i = 0; i < 40; i++){
         var pix = $("<span>□</span>");
-        char.el.append(pix);
+        this.el.append(pix);
     }
-    $(".char > span").on("click", function(){
+    this.el.children("span").on("click", function(){
+        console.log("Yup.");
         $(this).text($(this).text() === "□" ? "■" : "□");
-        char.hex.text(parseInt($(this).parent().text().replace(/□/g, "0").replace(/■/g, "1"), 2).toString(16));
+        $(this).parents('.contain').children(".hex").text(parseInt($(this).parent().text().replace(/□/g, "0").replace(/■/g, "1"), 2).toString(16));
     });
 };
